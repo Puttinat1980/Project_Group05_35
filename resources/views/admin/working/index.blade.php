@@ -14,7 +14,6 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Name</th>
                                         <th>User</th>
                                         <th>Image</th>
                                         <th>Action</th>
@@ -26,7 +25,6 @@
                                  <tr>
                                         <td>{{ $working->firstItem()+$loop->index }}</td>
                                         <td>{{ $work->name }}</td>
-                                        <td>{{ $work->user->name }}</td>
                                         <td> <img src="{{ asset('backend/upload/working/'.$work->image) }}" width="100px" height="100px"></td>
                                         <td class="color-primary">
                                         <a href="{{ url('/admin/working/edit/'.$work->id) }}" class="btn btn-warning">แก้ไข</a>

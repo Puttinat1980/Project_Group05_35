@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\CalendarController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\ProductController;
@@ -17,6 +18,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
+// start promotepage //
+Route::view('/', 'promotepage.home')->name('home');
+Route::view('/product','promotepage.product')->name('product'); 
+Route::view('/calendar','promotepage.calendar')->name('calendar');
+Route::view('/about','promotepage.about')->name('about');
+Route::view('/contact','promotepage.contact')->name('contact');
+Route::view('/work','promotepage.work')->name('work');
+
+
+
+
+//admin
 Route::get('/', function () {
     return view('welcome');
 });
@@ -57,3 +73,4 @@ Route::post('admin/working/insert',[workingsController::class, 'insert'])->name(
 Route::get('admin/working/delete/{id}',[workingsController::class, 'delete']);
 Route::get('admin/working/edit/{id}',[workingsController::class, 'edit']);
 Route::post('admin/working/update/{id}',[workingsController::class, 'update']);
+
